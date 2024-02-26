@@ -1,0 +1,24 @@
+@startuml
+
+object "<u>c1:Course</u>" as course{
+  name = "CS5800 - Advanced Software Engineering"
+  instructors = [i1]
+  textbooks = [t1]
+}
+
+object "<u>c1Instructor1:Instructor</u>" as instructor{
+  firstName = "Nima"
+  lastName = "Davarpanah"
+  officeNumber = "3-2636"
+}
+
+object "<u>c1Textbook:Textbook</u>" as textbook{
+  title = "CleanCode: A Handbook of Agile Software Craftsmanship"
+  author = "Robert Cecil Martin"
+  publisher = "Pearson"
+}
+
+course *-- instructor
+course *-- textbook
+
+@enduml

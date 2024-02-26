@@ -1,0 +1,67 @@
+@startuml
+
+object "<u>root:Folder</u>" as root{
+  name = "php_demo1"
+  subfolders = [source, include, remote]
+  files = []
+}
+
+object "<u>source:Folder</u>" as source{
+  name = "Source Files"
+  subfolders = [phalcon, cache, public]
+  files = []
+}
+
+object "<u>phalcon:Folder</u>" as phalcon{
+  name = ".phalcon"
+  subfolders = []
+  files = []
+}
+
+object "<u>cache:Folder</u>" as cache{
+  name = "cache"
+  subfolders = []
+  files = []
+}
+
+object "<u>public:Folder</u>" as public{
+  name = "public"
+  subfolders = []
+  files = [.htaccess, .htrouter.php, index.html]
+}
+
+object "<u>include:Folder</u>" as include{
+  name = "Include Path"
+  subfolders = []
+  files = []
+}
+
+object "<u>remote:Folder</u>" as remote{
+  name = "Remote Files"
+  subfolders = []
+  files = []
+}
+
+object "<u>.htaccess:File</u>" as htaccess{
+  name = ".htaccess"
+}
+
+object "<u>.htrouter.php:File</u>" as htrouter{
+  name = ".htrouter.php"
+}
+
+object "<u>index.html:File</u>" as index{
+  name = "index.html"
+}
+
+root *-- source
+root *-- include
+root *-- remote
+source *-- phalcon
+source *-- cache
+source *-- public
+public *-- htaccess
+public *-- htrouter
+public *-- index
+
+@enduml
